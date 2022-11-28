@@ -148,7 +148,7 @@ async function run(){
                 const result=await advertiseProductCollection.insertOne(advertiseProduct)
                 return res.send(result)
             }
-            res.send({message:'product already added'})
+            res.send({message:'product already addedd'})
               
             
            
