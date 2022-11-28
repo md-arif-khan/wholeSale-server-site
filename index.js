@@ -103,9 +103,12 @@ async function run(){
         app.delete('/deleteProduct/:id',async(req,res)=>{
             const id=req.params.id;
             const query={_id:ObjectId(id)}
+            const query2={_id:id}
+            const advertisdelete=await advertiseProductCollection.deleteOne(query2)
             const result=await sellerProductCollection.deleteOne(query)
             res.send(result)
         })
+        
         app.get('/sellers',async(req,res)=>{
             const query={role:'seller'}
             const result=await userCollection.find(query).toArray()
